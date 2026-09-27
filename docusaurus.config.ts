@@ -1,7 +1,8 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-
+import footer from "./footer"; // No need for .ts extension here
+import navbarItems from "./navbar"; // Import your new navbar file
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
@@ -74,71 +75,14 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'Nupet Docs',
+      title: 'TCC/DAELT/UTFPR',
       logo: {
-        alt: 'Nupet Docs Logo',
-        src: 'img/logo.svg',
+        alt: 'My Site Logo',
+        src: 'img/UTFPR_logo.svg',
       },
-      items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Tutorial',
-        },
-        {to: '/blog', label: 'Blog', position: 'left'},
-        {
-          href: 'https://github.com/ruseleredu/nupet-docs',
-          label: 'GitHub',
-          position: 'right',
-        },
-      ],
+      items: navbarItems, // Drop the imported array here
     },
-    footer: {
-      style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/ruseleredu/nupet-docs',
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} Nupet Docs, Inc. Built with Docusaurus.`,
-    },
+ footer: footer, // Use the imported object
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
