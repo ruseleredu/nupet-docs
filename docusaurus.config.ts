@@ -77,15 +77,30 @@ const config: Config = {
     navbar: {
       title: 'TCC/DAELT/UTFPR',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'UTFPR Logo',
         src: 'img/UTFPR_logo.svg',
       },
       items: navbarItems, // Drop the imported array here
     },
  footer: footer, // Use the imported object
-    prism: {
+ prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+      additionalLanguages: [
+        // https://prismjs.com/#supported-languages
+        "apacheconf",
+        "nginx",
+        "bash",
+        "matlab",
+        "powershell",
+        "ini",
+        "latex",
+        "php",
+        "docker",
+        "perl",
+        "java",
+        "batch",
+      ],
     },
   } satisfies Preset.ThemeConfig,
 };
