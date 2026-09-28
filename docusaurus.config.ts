@@ -4,6 +4,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 import footer from "./footer"; // No need for .ts extension here
 import navbarItems from "./navbar"; // Import your new navbar file
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 const config: Config = {
   title: 'Nupet Docs',
@@ -41,7 +43,14 @@ const config: Config = {
     mermaid: true,
   },
   themes: ['@docusaurus/theme-mermaid'],
-  
+
+  stylesheets: [
+    {
+      href: '/katex/katex.min.css', // No need for integrity/crossorigin when local
+      type: "text/css",
+    },
+  ],
+
   presets: [
     [
       'classic',
@@ -51,6 +60,8 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/ruseleredu/nupet-docs/edit/main/",
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
         },
         blog: {
           showReadingTime: true,
