@@ -62,6 +62,8 @@ const config: Config = {
           editUrl: "https://github.com/ruseleredu/nupet-docs/edit/main/",
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,
